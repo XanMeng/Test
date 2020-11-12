@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour {
         transform.position += transform.right * Input.GetAxisRaw("Horizontal") * Time.deltaTime * sensitivity;
         Vector3 direction = transform.forward;
         direction.y = 0.0f;
-        direction *= 2.0f;
+       
         transform.position += direction * Input.GetAxisRaw("Vertical") * Time.deltaTime * sensitivity;
     }
 }
