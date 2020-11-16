@@ -22,6 +22,8 @@ public class Heal : MonoBehaviour {
 
             });
 
+            // Cool
+
             yield return new WaitForSeconds(1.0f);
         }
     }
