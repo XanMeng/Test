@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Entity : MonoBehaviour, ISelectable , ITargetable , IMovable , IDamageable
+public class Entity : MonoBehaviour, ISelectable , ITargetable , IMovable , IDamageable, IHealable
 {
     [SerializeField] GameObject visual;
     [SerializeField] GameObject visualTarget;
@@ -71,5 +71,11 @@ public class Entity : MonoBehaviour, ISelectable , ITargetable , IMovable , IDam
         {
             Destroy(gameObject);
         }
+    }
+
+    void IHealable.Heal(float _amout)
+    {
+        healthPoint = Mathf.Clamp(healthPoint + _amout, 0, maxHealthPoint);
+        OnHealthChange(healthPoint, maxHealthPoint);
     }
 }
