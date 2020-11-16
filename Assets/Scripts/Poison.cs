@@ -17,7 +17,7 @@ public class Poison : MonoBehaviour {
                 IDamageable damageable = x.transform.GetComponent<IDamageable>();
                 if (damageable != null)
                 {
-                    damageable.Damage(4);
+                    damageable.Damage(15);
                 }
 
             });
